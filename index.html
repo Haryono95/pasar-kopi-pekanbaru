@@ -3,274 +3,305 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pasar Kopi Pekanbaru | Paskop</title>
-  <!-- Tailwind via CDN + custom font -->
+  <title>Pasar Kopi Pekanbaru | Paskop · Coffee & Barista School</title>
+  <!-- Tailwind + custom config -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome Icons (free) -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* custom scroll & smooth behavior */
     html { scroll-behavior: smooth; }
-    /* floating WA animation */
     .float-wa {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
     .float-wa:hover {
-      transform: scale(1.1);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+      transform: scale(1.1) translateY(-4px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+    }
+    .testimonial-card {
+      transition: all 0.2s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-6px);
     }
   </style>
 </head>
 <body class="bg-stone-50 text-stone-800 font-sans antialiased">
 
-  <!-- floating WA button -->
-  <a href="https://wa.me/6285265588333?text=Halo%20Pasar%20Kopi%2C%20saya%20mau%20tanya%20seputar%20kopi%20atau%20training%20barista" 
+  <!-- ===== WHATSAPP FLOATING ===== -->
+  <a href="https://wa.me/6285265588333?text=Halo%20Pasar%20Kopi%2C%20saya%20ingin%20tanya%20seputar%20menu%20atau%20training%20barista" 
      target="_blank" 
-     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white rounded-full p-4 float-wa flex items-center justify-center w-16 h-16 text-3xl shadow-lg border-2 border-white/30">
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white rounded-full p-4 float-wa flex items-center justify-center w-16 h-16 text-3xl shadow-lg border-2 border-white/40">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- header / navbar -->
-  <header class="bg-[#2c1b0f] text-white sticky top-0 z-40 shadow-xl">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
-      <!-- logo & nama -->
+  <!-- ===== NAVBAR (transparan ke solid) ===== -->
+  <nav class="bg-[#2c1b0f] text-white sticky top-0 z-40 shadow-md">
+    <div class="container mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
+      <!-- logo -->
       <div class="flex items-center space-x-2">
         <i class="fas fa-mug-hot text-3xl text-[#b87c4b]"></i>
-        <h1 class="text-xl md:text-2xl font-bold tracking-tight"><span class="text-[#b87c4b]">Pasar</span>Kopi</h1>
+        <span class="text-xl md:text-2xl font-bold tracking-tight"><span class="text-[#b87c4b]">Pasar</span>Kopi</span>
       </div>
-      <!-- badge lokasi ringkas -->
-      <div class="flex items-center gap-3 text-sm bg-stone-900/60 px-3 py-1.5 rounded-full">
-        <i class="fas fa-map-pin text-[#b87c4b]"></i>
-        <span class="truncate max-w-[150px] md:max-w-xs">Jl. Bayan, Kp. Melayu, Sukajadi</span>
+      <!-- desktop menu -->
+      <div class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="#home" class="hover:text-[#b87c4b] transition">Home</a>
+        <a href="#tentang" class="hover:text-[#b87c4b] transition">Tentang</a>
+        <a href="#layanan" class="hover:text-[#b87c4b] transition">Layanan</a>
+        <a href="#menu" class="hover:text-[#b87c4b] transition">Menu</a>
+        <a href="#testimoni" class="hover:text-[#b87c4b] transition">Testimoni</a>
+        <a href="#lokasi" class="hover:text-[#b87c4b] transition">Lokasi</a>
       </div>
-      <!-- simpan / share icon -->
-      <div class="flex gap-2 text-xl">
-        <i class="far fa-bookmark hover:text-[#b87c4b] cursor-pointer"></i>
-        <i class="fas fa-share-alt hover:text-[#b87c4b] cursor-pointer"></i>
+      <!-- cta kecil -->
+      <a href="https://wa.me/6285265588333" class="bg-[#b87c4b] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#c8925a] transition flex items-center gap-1"><i class="fab fa-whatsapp"></i> Kontak</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="relative bg-gradient-to-r from-[#1e130b] to-[#3d2a1a] text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+    <div class="container mx-auto px-4 md:px-8 py-16 md:py-28 relative z-10">
+      <div class="max-w-3xl">
+        <span class="bg-[#b87c4b] text-black text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">PASKOP · SEJAK 2018</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Ngopi murah meriah, <br><span class="text-[#b87c4b]">belajar jadi barista</span></h1>
+        <p class="text-lg md:text-xl text-stone-300 mt-4 max-w-2xl">Kopi 15 ribuan, biji pilihan, training barista profesional. Suasana khas Pekanbaru dengan cita rasa modern.</p>
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href="#menu" class="bg-[#b87c4b] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#dba76f] transition shadow-lg text-sm md:text-base">Lihat Menu</a>
+          <a href="https://wa.me/6285265588333?text=Halo%20saya%20minat%20training%20barista" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition text-sm md:text-base"><i class="fas fa-graduation-cap mr-2"></i>Training Barista</a>
+        </div>
+        <!-- rating badge -->
+        <div class="flex items-center gap-4 mt-8 text-sm bg-black/30 backdrop-blur-sm p-3 rounded-full w-fit">
+          <div class="flex items-center"><i class="fas fa-star text-amber-400 mr-1"></i> <span class="font-bold">4.5</span> <span class="text-stone-300 ml-1">(82 ulasan)</span></div>
+          <div class="w-px h-4 bg-stone-500"></div>
+          <div><i class="fas fa-wallet mr-1 text-[#b87c4b]"></i>Rp 1–25k (rata² 15k)</div>
+        </div>
       </div>
     </div>
-  </header>
+    <!-- wave shape (opsional) -->
+  </section>
 
-  <!-- hero / ringkasan utama -->
-  <section class="bg-gradient-to-b from-[#3d2a1a] to-[#1e130b] text-white">
-    <div class="container mx-auto px-4 py-6 md:py-8">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+  <!-- ===== TENTANG SECTION ===== -->
+  <section id="tentang" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="suasana kafe" class="rounded-3xl shadow-2xl object-cover w-full h-80 md:h-96">
+        </div>
+        <div class="md:w-1/2">
+          <span class="text-[#b87c4b] font-bold tracking-wider text-sm">TENTANG KAMI</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Pasar Kopi Pekanbaru <span class="text-[#b87c4b]">#Paskop</span></h2>
+          <p class="text-stone-600 mb-4 leading-relaxed">Lebih dari sekadar kafe, Paskop adalah ruang belajar dan menikmati kopi dari hulu ke hilir. Kami menjual biji kopi pilihan dari petani lokal, menyajikan minuman kopi & non-kopi dengan harga terjangkau (mulai 15rb), serta membuka kelas training barista untuk pemula hingga roasting.</p>
+          <p class="text-stone-600 mb-6 leading-relaxed">Didirikan di jantung Pekanbaru, kami percaya bahwa kopi berkualitas bisa dinikmati semua kalangan. Suasana modern namun tetap hangat, cocok untuk bekerja, ngobrol, atau belajar meracik kopi.</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#b87c4b]"></i><span>Biji Kopi Mentah</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#b87c4b]"></i><span>Kafe & Roastery</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#b87c4b]"></i><span>Training Barista</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#b87c4b]"></i><span>Harga Rakyat</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LAYANAN (SERVICE ICONS) ===== -->
+  <section id="layanan" class="py-16 bg-stone-100">
+    <div class="container mx-auto px-4 md:px-8 text-center">
+      <span class="text-[#b87c4b] font-bold tracking-wider text-sm">APA YANG KAMI TAWARKAN</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-12">Layanan & Produk Paskop</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-[#b87c4b] hover:shadow-xl transition">
+          <i class="fas fa-mug-hot text-5xl text-[#b87c4b] mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Kopi 15rb an</h3>
+          <p class="text-stone-500 text-sm">Espresso, Americano, V60, kopi susu signature dengan harga bersahabat.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-[#b87c4b] hover:shadow-xl transition">
+          <i class="fas fa-leaf text-5xl text-[#b87c4b] mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Non Kopi</h3>
+          <p class="text-stone-500 text-sm">Matcha, red velvet, chocolate, dan aneka teh untuk kamu yang tidak ingin kafein.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-[#b87c4b] hover:shadow-xl transition">
+          <i class="fas fa-seedling text-5xl text-[#b87c4b] mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Biji Kopi Mentah</h3>
+          <p class="text-stone-500 text-sm">Arabika Gayo, Robusta Lampung, dan specialty lokal. Tersedia 100gr, 250gr.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-[#b87c4b] hover:shadow-xl transition">
+          <i class="fas fa-chalkboard-teacher text-5xl text-[#b87c4b] mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Training Barista</h3>
+          <p class="text-stone-500 text-sm">Kelas dasar (2 hari) hingga roasting class. Sertifikat & praktik langsung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU HIGHLIGHT ===== -->
+  <section id="menu" class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="text-center mb-12">
+        <span class="text-[#b87c4b] font-bold tracking-wider text-sm">NIKMATI RASA TERBAIK</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2">Menu Andalan Paskop</h2>
+        <p class="text-stone-600 max-w-2xl mx-auto mt-3">Mulai dari kopi susu kekinian hingga manual brew, semua dengan harga ramah di kantong.</p>
+      </div>
+      <!-- grid menu -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-stone-50 rounded-xl overflow-hidden shadow border border-stone-200">
+          <div class="h-40 bg-[#b87c4b]/20 flex items-center justify-center text-6xl text-[#3d2a1a]"><i class="fas fa-coffee"></i></div>
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Kopi Susu Paskop</h4>
+            <p class="text-sm text-stone-500">Espresso + susu pilihan, gula aren</p>
+            <span class="inline-block mt-2 bg-[#b87c4b] text-black px-3 py-1 rounded-full text-xs font-bold">Rp 15.000</span>
+          </div>
+        </div>
+        <div class="bg-stone-50 rounded-xl overflow-hidden shadow border border-stone-200">
+          <div class="h-40 bg-[#8b6b4f]/20 flex items-center justify-center text-6xl text-[#3d2a1a]"><i class="fas fa-wine-bottle"></i></div>
+          <div class="p-4">
+            <h4 class="font-bold text-lg">V60 Manual Brew</h4>
+            <p class="text-sm text-stone-500">Biji pilihan, diseduh manual</p>
+            <span class="inline-block mt-2 bg-[#b87c4b] text-black px-3 py-1 rounded-full text-xs font-bold">Rp 16.000</span>
+          </div>
+        </div>
+        <div class="bg-stone-50 rounded-xl overflow-hidden shadow border border-stone-200">
+          <div class="h-40 bg-[#5e4b37]/20 flex items-center justify-center text-6xl text-[#3d2a1a]"><i class="fas fa-mug-saucer"></i></div>
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Matcha Latte</h4>
+            <p class="text-sm text-stone-500">Matcha asli, non-coffee</p>
+            <span class="inline-block mt-2 bg-[#b87c4b] text-black px-3 py-1 rounded-full text-xs font-bold">Rp 17.000</span>
+          </div>
+        </div>
+        <div class="bg-stone-50 rounded-xl overflow-hidden shadow border border-stone-200">
+          <div class="h-40 bg-[#3d2a1a]/20 flex items-center justify-center text-6xl text-[#3d2a1a]"><i class="fas fa-seedling"></i></div>
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Biji Kopi Gayo</h4>
+            <p class="text-sm text-stone-500">Arabika, 250gr</p>
+            <span class="inline-block mt-2 bg-[#b87c4b] text-black px-3 py-1 rounded-full text-xs font-bold">Rp 45.000</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="#" class="inline-block border-2 border-[#b87c4b] text-[#b87c4b] px-8 py-3 rounded-full font-semibold hover:bg-[#b87c4b] hover:text-black transition">Lihat Menu Lengkap <i class="fas fa-arrow-right ml-2"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONI ===== -->
+  <section id="testimoni" class="py-16 bg-stone-100">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="text-center mb-12">
+        <span class="text-[#b87c4b] font-bold tracking-wider text-sm">KATA MEREKA</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2">Apa kata pengunjung?</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow testimonial-card">
+          <div class="flex text-amber-400 mb-3">★★★★★</div>
+          <p class="text-stone-700 italic">"Tempatnya cozy, kopi susunya enak cuma 15rb. Baristanya ramah, mau explain biji kopi. Bakal balik lagi!"</p>
+          <div class="flex items-center mt-4">
+            <div class="w-10 h-10 rounded-full bg-stone-300 flex items-center justify-center text-stone-700 font-bold">RA</div>
+            <div class="ml-3">
+              <p class="font-semibold">Rina Andini</p>
+              <p class="text-xs text-stone-500">Pengunjung kafe</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow testimonial-card">
+          <div class="flex text-amber-400 mb-3">★★★★★</div>
+          <p class="text-stone-700 italic">"Ikut training barista dasar di Paskop, puas banget! Materinya padat, praktik langsung, dan dapat sertifikat. Recommended buat pemula."</p>
+          <div class="flex items-center mt-4">
+            <div class="w-10 h-10 rounded-full bg-stone-300 flex items-center justify-center text-stone-700 font-bold">DS</div>
+            <div class="ml-3">
+              <p class="font-semibold">Dimas Saputra</p>
+              <p class="text-xs text-stone-500">Peserta training</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow testimonial-card">
+          <div class="flex text-amber-400 mb-3">★★★★☆</div>
+          <p class="text-stone-700 italic">"Beli biji kopi Gayo di sini, harga ok dan masih fresh. Barista-nya kasih saran grinding. Wifi kenceng, cocok buat WFA."</p>
+          <div class="flex items-center mt-4">
+            <div class="w-10 h-10 rounded-full bg-stone-300 flex items-center justify-center text-stone-700 font-bold">ML</div>
+            <div class="ml-3">
+              <p class="font-semibold">Maya Lestari</p>
+              <p class="text-xs text-stone-500">Coffee enthusiast</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PETA LOKASI (embed Google Maps) ===== -->
+  <section id="lokasi" class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="flex flex-col lg:flex-row gap-10 items-start">
+        <div class="lg:w-1/2">
+          <span class="text-[#b87c4b] font-bold tracking-wider text-sm">KUNJUNGI KAMI</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Lokasi & Kontak</h2>
+          <p class="text-stone-600 mb-6 flex items-start gap-2"><i class="fas fa-map-pin text-[#b87c4b] text-xl mt-1"></i> GC7P+H38, Jl. Bayan, Kp. Melayu, Kec. Sukajadi, Kota Pekanbaru, Riau 28122</p>
+          <p class="text-stone-600 mb-3 flex items-center gap-2"><i class="fas fa-phone-alt text-[#b87c4b]"></i> <span class="font-medium">0852-6558-8333</span></p>
+          <p class="text-stone-600 mb-3 flex items-center gap-2"><i class="far fa-clock text-[#b87c4b]"></i> Buka setiap hari 08.00–23.45 (jam libur nasional dapat berbeda)</p>
+          <p class="text-stone-600 mb-6 flex items-center gap-2"><i class="fas fa-wallet text-[#b87c4b]"></i> Rp 1.000 – 25.000 per orang (dilaporkan 3 orang)</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://wa.me/6285265588333" class="bg-[#b87c4b] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#dba76f] transition inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+            <a href="#" class="border border-stone-400 px-6 py-3 rounded-full font-semibold hover:bg-stone-100 transition inline-flex items-center gap-2"><i class="fas fa-route"></i> Buka Rute</a>
+          </div>
+        </div>
+        <div class="lg:w-1/2 w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-stone-200">
+          <!-- Google Maps Embed (contoh titik Pekanbaru) -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.866750850313!2d101.4497226!3d0.5070677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5afc5d5a5c5c5%3A0x5c5c5c5c5c5c5c5c!2sJl.%20Bayan%2C%20Kp.%20Melayu%2C%20Kec.%20Sukajadi%2C%20Kota%20Pekanbaru%2C%20Riau%2028122!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CALL TO ACTION (training) ===== -->
+  <section class="bg-[#2c1b0f] text-white py-16">
+    <div class="container mx-auto px-4 md:px-8 text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-3">Mau jadi barista handal?</h3>
+      <p class="text-stone-300 max-w-2xl mx-auto mb-8">Ikuti training barista di Paskop, kelas reguler & private. Dapatkan pengalaman langsung dengan mesin profesional.</p>
+      <a href="https://wa.me/6285265588333?text=Halo%20saya%20minat%20training%20barista%20di%20Paskop" class="bg-[#b87c4b] text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-[#e0ab73] transition inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Konsultasi via WA</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-[#1e130b] text-stone-400 py-10 border-t border-stone-800">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <div class="flex items-center gap-2 flex-wrap">
-            <h2 class="text-2xl md:text-3xl font-bold">Pasar Kopi Pekanbaru</h2>
-            <span class="bg-[#b87c4b] text-black text-xs font-semibold px-2 py-1 rounded-full">Paskop</span>
+          <div class="flex items-center space-x-2 text-white mb-4">
+            <i class="fas fa-mug-hot text-3xl text-[#b87c4b]"></i>
+            <span class="text-xl font-bold"><span class="text-[#b87c4b]">Pasar</span>Kopi</span>
           </div>
-          <!-- rating & range harga -->
-          <div class="flex items-center flex-wrap gap-x-4 gap-y-2 mt-2">
-            <div class="flex items-center">
-              <span class="text-amber-400 text-xl mr-1">★</span>
-              <span class="font-bold text-lg">4,5</span>
-              <span class="text-stone-300 text-sm ml-1">(82 ulasan)</span>
-            </div>
-            <div class="flex items-center text-sm bg-stone-800/80 px-3 py-1 rounded-full">
-              <i class="fas fa-wallet mr-2 text-[#b87c4b]"></i>
-              <span>Rp 1–25.000</span>
-              <span class="mx-2">•</span>
-              <span>rata-rata 15rb</span>
-            </div>
-          </div>
-          <!-- info singkat -->
-          <div class="flex flex-wrap gap-3 mt-3 text-sm">
-            <span class="bg-stone-700/50 px-3 py-1 rounded-full"><i class="fas fa-coffee mr-1 text-[#b87c4b]"></i>Kafe & Roastery</span>
-            <span class="bg-stone-700/50 px-3 py-1 rounded-full"><i class="fas fa-seedling mr-1 text-[#b87c4b]"></i>Jual biji kopi</span>
-            <span class="bg-stone-700/50 px-3 py-1 rounded-full"><i class="fas fa-graduation-cap mr-1 text-[#b87c4b]"></i>Training barista</span>
-          </div>
+          <p class="text-sm leading-relaxed">Kafe, roastery, dan sekolah barista di Pekanbaru. Harga merakyat, kualitas juara.</p>
         </div>
-        <!-- tombol aksi cepat -->
-        <div class="flex gap-2 self-end">
-          <button class="bg-[#b87c4b] text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-[#a56d3f] transition flex items-center"><i class="fas fa-route mr-2"></i>Rute</button>
-          <button class="border border-[#b87c4b] text-[#b87c4b] px-5 py-2 rounded-full font-semibold text-sm hover:bg-[#b87c4b] hover:text-black transition"><i class="far fa-save mr-2"></i>Simpan</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- jam operasional & status -->
-  <section class="bg-white shadow-sm border-b border-stone-200">
-    <div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <div class="bg-green-600 w-3 h-3 rounded-full animate-pulse"></div>
-        <span class="font-semibold">Buka sekarang · Selasa (Imlek) 08.00–23.45</span>
-        <span class="text-sm text-stone-500 italic">Jam dapat berbeda</span>
-      </div>
-      <div class="flex gap-2 text-sm">
-        <a href="#" class="text-[#b87c4b] underline decoration-dotted">semua jam</a>
-        <span class="text-stone-300">|</span>
-        <a href="#" class="text-[#b87c4b] underline decoration-dotted">suggest baru</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- tagline layanan: kopi, non kopi, biji, training -->
-  <section class="bg-stone-100 border-b border-stone-200">
-    <div class="container mx-auto px-4 py-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
-        <div class="bg-white p-3 rounded-2xl shadow-sm border-l-4 border-[#b87c4b]">
-          <i class="fas fa-mug-hot text-3xl text-[#3d2a1a]"></i>
-          <p class="font-semibold mt-1">Kopi 15rb an</p>
-          <p class="text-xs text-stone-500">Espresso, manual brew</p>
-        </div>
-        <div class="bg-white p-3 rounded-2xl shadow-sm border-l-4 border-[#b87c4b]">
-          <i class="fas fa-leaf text-3xl text-[#3d2a1a]"></i>
-          <p class="font-semibold mt-1">Non kopi</p>
-          <p class="text-xs text-stone-500">Matcha, coklat, teh</p>
-        </div>
-        <div class="bg-white p-3 rounded-2xl shadow-sm border-l-4 border-[#b87c4b]">
-          <i class="fas fa-seedling text-3xl text-[#3d2a1a]"></i>
-          <p class="font-semibold mt-1">Biji kopi mentah</p>
-          <p class="text-xs text-stone-500">Arabika, Robusta</p>
-        </div>
-        <div class="bg-white p-3 rounded-2xl shadow-sm border-l-4 border-[#b87c4b]">
-          <i class="fas fa-chalkboard-teacher text-3xl text-[#3d2a1a]"></i>
-          <p class="font-semibold mt-1">Training barista</p>
-          <p class="text-xs text-stone-500">kelas pemula / lanjut</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- menu & ringkasan (modern card) -->
-  <section class="container mx-auto px-4 py-6">
-    <!-- navigation menu tabs -->
-    <div class="flex overflow-x-auto space-x-6 text-sm md:text-base border-b border-stone-300 pb-2 mb-6">
-      <a href="#" class="font-semibold text-[#b87c4b] border-b-2 border-[#b87c4b] pb-2 whitespace-nowrap">Menu</a>
-      <a href="#" class="text-stone-600 hover:text-[#b87c4b] whitespace-nowrap">Ringkasan</a>
-      <a href="#" class="text-stone-600 hover:text-[#b87c4b] whitespace-nowrap">Ulasan</a>
-      <a href="#" class="text-stone-600 hover:text-[#b87c4b] whitespace-nowrap">Tentang</a>
-      <a href="#" class="text-stone-600 hover:text-[#b87c4b] whitespace-nowrap">Di Sekitar</a>
-    </div>
-
-    <!-- highlight menu (menu unggulan + harga) -->
-    <h3 class="text-xl font-bold flex items-center gap-2"><i class="fas fa-crown text-[#b87c4b]"></i> Menu unggulan (mulai 15rb)</h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200">
-        <div class="h-28 bg-[#d9b382] flex items-center justify-center text-5xl text-stone-800"><i class="fas fa-mug-hot"></i></div>
-        <div class="p-3">
-          <h4 class="font-bold">Kopi Susu Khas</h4>
-          <p class="text-sm text-stone-500">15k · 18k</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200">
-        <div class="h-28 bg-[#b87c4b] flex items-center justify-center text-5xl text-black"><i class="fas fa-wine-bottle"></i></div>
-        <div class="p-3">
-          <h4 class="font-bold">V60 Manual</h4>
-          <p class="text-sm text-stone-500">16k</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200">
-        <div class="h-28 bg-[#6b4f32] flex items-center justify-center text-5xl text-stone-200"><i class="fas fa-mug-saucer"></i></div>
-        <div class="p-3">
-          <h4 class="font-bold">Matcha Latte</h4>
-          <p class="text-sm text-stone-500">non kopi · 17k</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200">
-        <div class="h-28 bg-[#3d2a1a] flex items-center justify-center text-5xl text-stone-400"><i class="fas fa-seedling"></i></div>
-        <div class="p-3">
-          <h4 class="font-bold">Biji Kopi Gayo</h4>
-          <p class="text-sm text-stone-500">250gr · 45k</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- menu lainnya (grid minuman & non coffee) -->
-    <div class="mt-10">
-      <div class="flex items-center justify-between">
-        <h3 class="text-xl font-bold">Menu lengkap</h3>
-        <span class="text-sm text-[#b87c4b] cursor-pointer">lihat semua <i class="fas fa-arrow-right"></i></span>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        <!-- kiri: kopi -->
-        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200">
-          <div class="flex items-center gap-2 text-lg font-semibold mb-2"><i class="fas fa-coffee text-[#b87c4b]"></i>Kopi & Espresso</div>
+        <div>
+          <h5 class="font-semibold text-white mb-3">Navigasi</h5>
           <ul class="space-y-2 text-sm">
-            <li class="flex justify-between"><span>Espresso</span><span class="font-medium">12k</span></li>
-            <li class="flex justify-between"><span>Americano</span><span class="font-medium">14k</span></li>
-            <li class="flex justify-between"><span>Kopi Susu (Paskop signature)</span><span class="font-medium">15k</span></li>
-            <li class="flex justify-between"><span>V60 / Manual Brew</span><span class="font-medium">16k-20k</span></li>
-            <li class="flex justify-between"><span>Cold Brew</span><span class="font-medium">18k</span></li>
+            <li><a href="#home" class="hover:text-[#b87c4b] transition">Home</a></li>
+            <li><a href="#tentang" class="hover:text-[#b87c4b] transition">Tentang</a></li>
+            <li><a href="#layanan" class="hover:text-[#b87c4b] transition">Layanan</a></li>
+            <li><a href="#menu" class="hover:text-[#b87c4b] transition">Menu</a></li>
+            <li><a href="#testimoni" class="hover:text-[#b87c4b] transition">Testimoni</a></li>
           </ul>
         </div>
-        <!-- kanan: non kopi & biji -->
-        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200">
-          <div class="flex items-center gap-2 text-lg font-semibold mb-2"><i class="fas fa-leaf text-[#b87c4b]"></i>Non Kopi & Lainnya</div>
-          <ul class="space-y-2 text-sm">
-            <li class="flex justify-between"><span>Matcha Latte</span><span class="font-medium">17k</span></li>
-            <li class="flex justify-between"><span>Red Velvet</span><span class="font-medium">17k</span></li>
-            <li class="flex justify-between"><span>Chocolate</span><span class="font-medium">15k</span></li>
-            <li class="flex justify-between"><span>Biji kopi mentah (per 100gr)</span><span class="font-medium">18k-30k</span></li>
-            <li class="flex justify-between"><span>Training Barista (pemula)</span><span class="font-medium">350k/2hr</span></li>
+        <div>
+          <h5 class="font-semibold text-white mb-3">Jam Buka</h5>
+          <ul class="space-y-1 text-sm">
+            <li>Senin - Minggu: 08.00–23.45</li>
+            <li class="text-stone-500 italic">*Tahun Baru Imlek tetap buka</li>
+            <li class="mt-3">📍 Jl. Bayan, Sukajadi, Pekanbaru</li>
           </ul>
         </div>
-      </div>
-    </div>
-
-    <!-- info tambahan: layanan & fasilitas -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8 p-4 bg-white rounded-xl shadow-sm border border-stone-200">
-      <div class="flex items-center gap-2"><i class="fas fa-store-alt text-[#b87c4b]"></i><span class="text-sm">Makan di tempat</span></div>
-      <div class="flex items-center gap-2"><i class="fas fa-shopping-bag text-[#b87c4b]"></i><span class="text-sm">Bawa pulang</span></div>
-      <div class="flex items-center gap-2"><i class="fas fa-truck text-[#b87c4b]"></i><span class="text-sm">Pengiriman</span></div>
-      <div class="flex items-center gap-2"><i class="fas fa-wifi text-[#b87c4b]"></i><span class="text-sm">WiFi gratis</span></div>
-    </div>
-
-    <!-- lokasi & kontak card -->
-    <div class="mt-8 bg-[#2c1b0f] text-white p-5 rounded-3xl shadow-2xl">
-      <div class="flex flex-col md:flex-row gap-6 items-start">
-        <div class="flex-1">
-          <div class="flex items-center gap-2 text-lg font-bold"><i class="fas fa-map-pin text-[#b87c4b]"></i> Alamat & kontak</div>
-          <p class="mt-2 text-stone-300 text-sm">GC7P+H38, Jl. Bayan, Kp. Melayu, Kec. Sukajadi, Kota Pekanbaru, Riau 28122</p>
-          <div class="flex items-center gap-3 mt-3 text-sm">
-            <i class="fas fa-phone-alt text-[#b87c4b]"></i>
-            <span>0852-6558-8333</span>
+        <div>
+          <h5 class="font-semibold text-white mb-3">Ikuti Kami</h5>
+          <div class="flex space-x-4 text-2xl">
+            <a href="#" class="hover:text-[#b87c4b] transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-[#b87c4b] transition"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="hover:text-[#b87c4b] transition"><i class="fab fa-facebook"></i></a>
           </div>
-          <div class="flex flex-wrap gap-3 mt-4">
-            <span class="bg-stone-800 px-3 py-1 rounded-full text-xs"><i class="far fa-clock mr-1"></i> Selasa (Imlek) 08.00–23.45</span>
-            <span class="bg-stone-800 px-3 py-1 rounded-full text-xs"><i class="fas fa-dollar-sign mr-1"></i> Rp 1–25.000 /org</span>
-          </div>
-        </div>
-        <div class="flex flex-col md:items-end gap-2 w-full md:w-auto">
-          <button class="bg-[#b87c4b] text-black px-6 py-2 rounded-full font-semibold text-sm hover:bg-[#c68e5a] transition w-full md:w-auto"><i class="fas fa-route mr-2"></i> Rute</button>
-          <button class="border border-stone-400 text-stone-200 px-6 py-2 rounded-full font-semibold text-sm hover:bg-stone-700 transition w-full md:w-auto"><i class="fas fa-share-alt mr-2"></i> Bagikan</button>
-          <span class="text-xs text-stone-400 mt-1">Dilaporkan oleh 3 orang</span>
+          <p class="text-xs text-stone-500 mt-4">© 2025 Pasar Kopi Pekanbaru (Paskop). All rights reserved.</p>
         </div>
       </div>
-    </div>
-
-    <!-- cta training barista -->
-    <div class="mt-8 bg-gradient-to-r from-[#b87c4b] to-[#8b5e3c] rounded-2xl p-6 text-black flex flex-wrap items-center justify-between">
-      <div>
-        <h4 class="text-xl font-bold flex items-center gap-2"><i class="fas fa-graduation-cap"></i> Mau jadi barista?</h4>
-        <p class="text-sm opacity-90">Training rutin kelas pemula & roasting. hubungi via WA</p>
-      </div>
-      <a href="https://wa.me/6285265588333?text=Halo%20saya%20minat%20training%20barista" target="_blank" class="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-stone-900 transition mt-3 md:mt-0"><i class="fab fa-whatsapp"></i> Konsultasi</a>
-    </div>
-  </section>
-
-  <!-- footer sederhana -->
-  <footer class="bg-[#1e130b] text-stone-400 py-6 mt-8 border-t border-stone-800">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
-      <span>© 2025 Pasar Kopi Pekanbaru (Paskop) · harga murah 15rb an</span>
-      <span class="flex gap-4">
-        <i class="fab fa-instagram hover:text-[#b87c4b] cursor-pointer text-base"></i>
-        <i class="fab fa-tiktok hover:text-[#b87c4b] cursor-pointer text-base"></i>
-        <i class="fas fa-envelope hover:text-[#b87c4b] cursor-pointer text-base"></i>
-      </span>
     </div>
   </footer>
 
-  <!-- optional: tombol aksi bawah (mobile friendly) -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-stone-200 px-4 py-2 flex justify-around z-40">
-    <button class="flex flex-col items-center text-xs text-stone-600"><i class="fas fa-mug-hot text-[#b87c4b] text-lg"></i>Menu</button>
-    <button class="flex flex-col items-center text-xs text-stone-600"><i class="fas fa-map-marker-alt text-lg"></i>Lokasi</button>
-    <button class="flex flex-col items-center text-xs text-stone-600"><i class="fas fa-phone-alt text-lg"></i>Hubungi</button>
-    <button class="flex flex-col items-center text-xs text-stone-600"><i class="far fa-bookmark text-lg"></i>Simpan</button>
-  </div>
-  <div class="h-14 md:hidden"></div> <!-- spacer for bottom nav -->
+  <!-- bottom spacer for mobile (no fixed bottom nav now, lebih bersih) -->
 </body>
 </html>
